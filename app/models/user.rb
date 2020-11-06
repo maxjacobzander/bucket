@@ -3,6 +3,9 @@ class User < ApplicationRecord
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable, :omniauthable
+  
+  has_many :bucket_lists
+  has_many :goals, through: :bucket_lists
 
   def self.from_omniauth(auth)
     binding.pry
