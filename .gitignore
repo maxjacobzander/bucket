@@ -33,7 +33,7 @@
 # Ignore master key for decrypting credentials and more.
 /config/master.key
 
-/config/initializers/devise
+/config/initializers
 
 /public/packs
 /public/packs-test
