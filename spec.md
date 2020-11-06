@@ -22,3 +22,24 @@ Confirm:
 - [ ] Limited logic in controllers
 - [ ] Views use helper methods if appropriate
 - [ ] Views use partials if appropriate
+
+Models:
+User
+    Username
+    password digest
+    qualities:
+        has_many buckets
+        has many goals, through: buckets
+Bucket
+    Name - string
+    Goals - string
+    qualities
+        belongs_to user
+        has many_goals
+Goal
+    completed? -- boolean
+    qualities
+        belong_to bucket
+
+
+href=”http://www.google.com/search?q=Google+tutorial+create+link”>Google tutorial create link
