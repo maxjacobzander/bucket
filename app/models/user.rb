@@ -4,8 +4,8 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable, :omniauthable
   
-  has_many :bucket_lists
-  has_many :goals, through: :bucket_lists
+  has_many :goals
+  has_many :bucket_lists, through: :goals
 
   def self.from_omniauth(auth)
     binding.pry
