@@ -7,6 +7,8 @@ class User < ApplicationRecord
   has_many :goals
   has_many :bucket_lists, through: :goals
 
+  validates :email, uniqueness: true, presence: true
+
   def self.from_omniauth(auth)
     binding.pry
     where(provider: auth.provider, uid: auth.uid).first_or_create do |user|
