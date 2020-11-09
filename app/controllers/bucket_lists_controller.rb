@@ -18,8 +18,7 @@ class BucketListsController < ApplicationController
     end
 
     def edit
-        @bucketlist = 
-
+        @bucketlist = BucketList.find(params[:id])
     end
 
     def update

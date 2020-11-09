@@ -8,7 +8,6 @@ class GoalsController < ApplicationController
         @goal = Goal.new
     end
 
-
     def create
         @goal = Goal.new(goal_params)
         if @goal.save
@@ -16,6 +15,14 @@ class GoalsController < ApplicationController
         else
             render :new
         end
+    end
+
+    def edit
+        @goal = Goal.find(params:[:id])
+    end
+
+    def update
+        
     end
 
     private
