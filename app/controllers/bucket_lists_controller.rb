@@ -9,7 +9,7 @@ class BucketListsController < ApplicationController
     end
 
     def create
-        @bucketlist = Bucketlist.new
+        @bucketlist = BucketList.new
         if @bucketlist.save
             redirect_to @bucketlist
         else

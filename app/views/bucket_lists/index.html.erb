@@ -1,8 +1,8 @@
 <h1><%= current_user.name %>'s Bucket Lists</h1>
 <br><br>
 <ul>
-<% current_user.bucket_lists.name.each do |bucket| %>
-    <h2><li><%= bucket %></h2></li>
+<% current_user.bucket_lists.each do |bucket| %>
+    <h2><li><%= link_to bucket.name, bucket_list_path(:id) %></h2></li>
 <% end %>
 </ul>
 
