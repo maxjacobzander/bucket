@@ -26,6 +26,7 @@ gem 'devise'
 gem 'omniauth'
 gem 'omniauth-facebook'
 gem 'omniauth-google'
+gem 'omniauth-github'
 gem 'dotenv-rails'
 gem 'faker'
 
