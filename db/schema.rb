@@ -10,14 +10,12 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_11_10_195051) do
+ActiveRecord::Schema.define(version: 2020_11_12_190539) do
 
   create_table "bucket_lists", force: :cascade do |t|
     t.string "name"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.integer "goals_id", null: false
-    t.index ["goals_id"], name: "index_bucket_lists_on_goals_id"
   end
 
   create_table "goals", force: :cascade do |t|
@@ -45,7 +43,6 @@ ActiveRecord::Schema.define(version: 2020_11_10_195051) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
-  add_foreign_key "bucket_lists", "goals", column: "goals_id"
   add_foreign_key "goals", "bucket_lists"
   add_foreign_key "goals", "users"
 end

@@ -13,9 +13,10 @@ class BucketListsController < ApplicationController
     end
 
     def create
-        @bucketlist = BucketList.new
+        @bucketlist = current_user.bucket_lists.build(bucket_params)
+        @bucketlist.goal_id = null
         if @bucketlist.save
-            redirect_to @bucketlist
+            redirect_to bucket_list_path(@bucketlist)
         else
             render :new
         end
@@ -27,5 +28,11 @@ class BucketListsController < ApplicationController
 
     def update
 
+    end
+
+    private
+
+    def bucket_params
+        params.require(:bucket_list).permit(:name)
     end
 end
