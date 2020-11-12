@@ -2,9 +2,9 @@
     <p><em><%= @goal.errors.full_messages %></em></p>
 <% end %>
 
-<%= form_with model: @goal, local: true do |f| %>
+<%= form_with model: [@bucketlist, @goal], local: true do |f| %>
     <%= f.label :name %>
     <%= f.text_field :name %><br><br>
 
-    <%= f.submit %>
+    <%= f.submit "Add Goal" %>
 <% end %>

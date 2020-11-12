@@ -1,7 +1,11 @@
 <h2><%= @bucketlist.name %></h2>
 <br>
-<ul>
-<li><%= @bucketlist.goals.each do |goal| %>
-    <%= goal.name %></li>
-    <% end %>
-</ul>
+<% if @bucketlist.goals != [] %>
+    <ul>
+    <li><%= @bucketlist.goals.each do |goal| %>
+        <%= goal.name %></li>
+        <% end %>
+    </ul>
+<% end %>
+
+<%= link_to "Add A New Goal", new_goal_path %>

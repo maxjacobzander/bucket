@@ -10,16 +10,25 @@ class BucketListsController < ApplicationController
 
     def new
         @bucketlist = BucketList.new
+        @goal = @bucketlist.goals.build
     end
 
     def create
-        @bucketlist = current_user.bucket_lists.build(bucket_params)
-        @bucketlist.goal_id = null
-        if @bucketlist.save
+        @bucketlist = BucketList.new
+        @goal = @bucketlist.goals.build
+        binding.pry
+        @bucketlist.name = params[:bucket_list][:name]
+        @goal.name = params[:bucket_list][:goals_attributes][:"0"][:name]
+        @goal.user_id = current_user.id
+        if @bucketlist.save && @goal.save
             redirect_to bucket_list_path(@bucketlist)
         else
             render :new
         end
+    end
+
+    def show
+        @bucketlist = BucketList.find(params[:id])
     end
 
     def edit
@@ -33,6 +42,6 @@ class BucketListsController < ApplicationController
     private
 
     def bucket_params
-        params.require(:bucket_list).permit(:name)
+        params.require(:bucket_list).permit(:name, goals_attributes: [:name])
     end
 end
