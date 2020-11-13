@@ -2,7 +2,7 @@
 <br><br>
 <ul>
 <% current_user.bucket_lists.each do |bucket| %>
-    <h2><li><%= link_to bucket.name, bucket_list_path(:id) %></h2></li>
+    <h2><li><%= link_to bucket.name, bucket_list_path(bucket.id) %></h2></li>
 <% end %>
 </ul>
 
