@@ -2,10 +2,12 @@
 <br>
 <% if @bucketlist.goals != [] %>
     <ul>
-    <li><%= @bucketlist.goals_id.each do |goal| %>
+    <li><%= @bucketlist.goals.each do |goal| %>
         <%= goal.name %></li>
         <% end %>
     </ul>
 <% end %>
 
-<%= link_to "Add A New Goal", new_goal_path %>
+<h3><%= link_to "Add A New Goal", new_goal_path %></h3>
+<br>
+<h3><%= link_to "Back to Your Buckets", bucket_lists_path %></h3>>
