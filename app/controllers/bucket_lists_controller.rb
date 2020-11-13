@@ -16,7 +16,6 @@ class BucketListsController < ApplicationController
     def create
         @bucketlist = BucketList.new
         @goal = @bucketlist.goals.build
-        binding.pry
         @bucketlist.name = params[:bucket_list][:name]
         @goal.name = params[:bucket_list][:goals_attributes][:"0"][:name]
         @goal.user_id = current_user.id

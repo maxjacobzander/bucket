@@ -1,5 +1,7 @@
 class ApplicationController < ActionController::Base
 
+    layout "application"
+
     def require_login  
         redirect_to '/users/sign_in' unless !current_user.nil?
     end

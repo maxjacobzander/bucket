@@ -2,7 +2,7 @@
 <br>
 <% if @bucketlist.goals != [] %>
     <ul>
-    <li><%= @bucketlist.goals.each do |goal| %>
+    <li><%= @bucketlist.goals_id.each do |goal| %>
         <%= goal.name %></li>
         <% end %>
     </ul>
