@@ -1,0 +1,7 @@
+<h2>Edit Your Bucket</h2>
+<br>
+<%= form_with model: @bucketlist, local: true do |f| %>
+    <%= f.label :name %>
+    <%= f.text_field :name %><br><br>
+    <%= f.submit "Update Bucket" %>
+<% end %>
