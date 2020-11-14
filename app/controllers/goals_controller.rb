@@ -5,8 +5,8 @@ class GoalsController < ApplicationController
     end
 
     def new
-        if params[:bucket_lists_id]
-            @bucketlist = BucketList.find(params[:bucket_lists_id])
+        if params[:bucket_list_id]
+            @bucketlist = BucketList.find(params[:bucket_list_id])
             @goal = @bucketlist.goals.build
         else
             @goal = Goal.new
