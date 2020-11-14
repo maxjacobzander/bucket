@@ -2,6 +2,8 @@
     <p><em><%= @goal.errors.full_messages %></em></p>
 <% end %>
 
+<h3>Add A New Goal To Your Bucket</h3>
+<br><br>
 <%= form_with model: [@bucketlist, @goal], local: true do |f| %>
     <%= f.label :name %>
     <%= f.text_field :name %><br><br>
