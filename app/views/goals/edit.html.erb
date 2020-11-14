@@ -1,0 +1,10 @@
+<% if @goal.errors.any? %>
+    <p><em><%= @goal.errors.full_messages %></em></p>
+<% end %>
+
+<%= form_with model: [@bucketlist, @goal], local: true do |f| %>
+    <%= f.label :name %>
+    <%= f.text_field :name %><br><br>
+
+    <%= f.submit "Update Goal" %>
+<% end %>

@@ -21,6 +21,7 @@ class GoalsController < ApplicationController
             @goal = Goal.new(goal_params)
         end
         if @goal.save
+            flash[:notice] = "Accomplish your goals! You can do it!"
             redirect_to @goal
         else
             render :new
