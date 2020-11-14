@@ -46,6 +46,12 @@ class BucketListsController < ApplicationController
         end
     end
 
+    def destroy
+        @bucketlist = BucketList.find(params[:id])
+        @bucketlist.destroy
+        flash.alert = "Bucket Deleted"
+        redirect_to bucket_lists_path
+    end
 
     private
 
