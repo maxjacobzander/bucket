@@ -17,6 +17,7 @@ class GoalsController < ApplicationController
         if params[:bucket_list_id]
             @bucketlist = BucketList.find(params[:bucket_list_id])
             @goal = @bucketlist.goals.build(goal_params)
+            @goal.user_id = current_user.id
         else
             @goal = Goal.new(goal_params)
         end
@@ -30,10 +31,11 @@ class GoalsController < ApplicationController
 
     def show
         @goal = Goal.find(params[:id])
+        @bucketlist = BucketList.find(params[:bucket_list_id])
     end
 
     def edit
-        @goal = Goal.find(params:[:id])
+        @goal = Goal.find(params[:id])
     end
 
     def update
@@ -43,6 +45,6 @@ class GoalsController < ApplicationController
     private
 
     def goal_params
-        params.require(:goal).permit(:name)
+        params.require(:goal).permit(:name, :user_id, :bucket_list_id)
     end
 end

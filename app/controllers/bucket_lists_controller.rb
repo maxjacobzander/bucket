@@ -35,8 +35,17 @@ class BucketListsController < ApplicationController
     end
 
     def update
+        @bucketlist = BucketList.find(params[:id])
 
+        @bucketlist.update(bucket_params)
+         
+        if @bucketlist.save
+            redirect_to @bucketlist
+        else
+            render :edit
+        end
     end
+
 
     private
 
