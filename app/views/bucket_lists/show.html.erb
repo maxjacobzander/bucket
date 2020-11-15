@@ -3,13 +3,12 @@
 <% if @bucketlist.goals != [] %>
     <ul>
     <li><% @bucketlist.goals.each do |goal| %>
-        <%= goal.name %></li>
+        <%= link_to goal.name, bucket_list_goal_path(goal) %></li>
         <% end %>
     </ul>
 <% end %>
 
 <h3><%= link_to "Add A New Goal", new_bucket_list_goal_path(@bucketlist) %></h3>
-<%# (@goal) %>
 <br>
 <h3><%= link_to "Edit Bucket", edit_bucket_list_path %> <%= link_to "Delete Bucket", bucket_list_path(@bucketlist), :method => :delete %></h3>
 <br>

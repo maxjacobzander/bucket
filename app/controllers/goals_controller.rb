@@ -31,11 +31,15 @@ class GoalsController < ApplicationController
 
     def show
         @goal = Goal.find(params[:id])
-        @bucketlist = BucketList.find(params[:bucket_list_id])
+        @bucketlist = BucketList.find_by_id(params[:bucket_list_id])
+        if @goal.user_id != current_user.id
+            redirect_to bucket_lists_path
+        end
     end
 
     def edit
         @goal = Goal.find(params[:id])
+        @bucketlist = BucketList.find_by_id(params[:bucket_list_id])
     end
 
     def update
