@@ -54,6 +54,13 @@ class GoalsController < ApplicationController
         end
     end
 
+    def destroy
+        @goal = Goal.find(params[:id])
+        @goal.destroy
+        flash.alert = "Goal Deleted"
+        redirect_to bucket_list_path
+    end
+
     private
 
     def goal_params
