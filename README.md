@@ -8,7 +8,10 @@ Welcome to Bucket!
 Bucket is a way for users to keep track of their personal bucketlists! The program was initially written for Flatiron School's Rails Project requirement.
 
 ### User Guide
-Upon creating a new account, users can create new Buckets for themselves, in which they keep keep track of their goals/aspirations. 
+Upon creating a new account, users can create new Buckets for themselves, in which they keep keep track of their goals/aspirations.
+
+### Future Plans
+Future plans for Bucket include the adding the ability to share your buckets with friends, as well as collaborate on assembling/keeping track of said buckets. I also plan to add the ability to search for more information about your goals directly from the goal's show page.
 
 ### Installation Guide
 - Clone repository

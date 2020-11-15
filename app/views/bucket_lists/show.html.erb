@@ -3,7 +3,7 @@
 <% if @bucketlist.goals != [] %>
     <ul>
     <li><% @bucketlist.goals.each do |goal| %>
-        <%= link_to goal.name, bucket_list_goal_path(@bucketlist, goal) %></li>
+        <%= link_to goal.name, bucket_list_goal_path(@bucketlist, goal) %></li><br>
         <% end %>
     </ul>
 <% end %>
