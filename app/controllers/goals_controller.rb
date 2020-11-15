@@ -57,9 +57,10 @@ class GoalsController < ApplicationController
 
     def destroy
         @goal = Goal.find(params[:id])
+        @bucketlist = BucketList.find_by_id(params[:bucket_list_id])
         @goal.destroy
         flash.alert = "Goal Deleted"
-        redirect_to bucket_list_path
+        redirect_to bucket_list_path(@bucketlist)
     end
 
     private
