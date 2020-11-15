@@ -23,7 +23,7 @@ class GoalsController < ApplicationController
         end
         if @goal.save
             flash[:notice] = "Accomplish your goals! You can do it!"
-            redirect_to @goal
+            redirect_to @bucketlist
         else
             render :new
         end
@@ -44,11 +44,12 @@ class GoalsController < ApplicationController
 
     def update
         @goal = Goal.find(params[:id])
+        @bucketlist = BucketList.find_by_id(params[:bucket_list_id])
 
         @goal.update(goal_params)
 
         if @goal.save
-            redirect_to @goal
+            redirect_to @bucketlist
         else
             render :edit
         end
