@@ -1,24 +1,24 @@
-# README
+# BUCKET
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## What's On Your Bucketlist?
 
-Things you may want to cover:
+Welcome to Bucket!
 
-* Ruby version
+### What is Bucket?
+Bucket is a way for users to keep track of their personal bucketlists! The program was initially written for Flatiron School's Rails Project requirement.
 
-* System dependencies
+### User Guide
+Upon creating a new account, users can create new Buckets for themselves, in which they keep keep track of their goals/aspirations. 
 
-* Configuration
+### Installation Guide
+- Clone repository
+- Run `bundle install` to install all necessary gems
+- Start up a rails server (`rails s`)
+- Either create an account or login to your existing account
+- Start keeping track of your Buckets!
 
-* Database creation
+### Contributor's Guide
+Pull requests are welcome. For major changes, please open an issue first to discuss what you would like to change.
 
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+### Licencing Statement
+This code is licenced under the MIT Open Source Public License.
