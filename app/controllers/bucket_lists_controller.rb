@@ -9,8 +9,12 @@ class BucketListsController < ApplicationController
     end
 
     def new
-        @bucketlist = BucketList.new
-        @goal = @bucketlist.goals.build
+        if user_signed_in?
+            @bucketlist = BucketList.new
+            @goal = @bucketlist.goals.build
+        else
+            redirect_to new_user_session_path
+        end
     end
 
     def create
@@ -23,7 +27,7 @@ class BucketListsController < ApplicationController
             redirect_to bucket_list_path(@bucketlist)
         else
             render :new
-        end
+        end        
     end
 
     def show
