@@ -84,7 +84,12 @@ body {
 
 .header_background {
   background-color: black;
-  }
+}
+
+.padded {
+  padding-left: 7rem;
+  padding-right: 7rem;
+  line-height: 4rem;
 }
 
 [tabindex="-1"]:focus:not(:focus-visible) {

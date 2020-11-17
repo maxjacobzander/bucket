@@ -9,5 +9,7 @@ Rails.application.routes.draw do
   #   resources :bucket_lists
   # end
 
+  get 'how_to', to: 'about#index'
+
   root to: "bucket_lists#index"
 end
