@@ -66,6 +66,6 @@ class GoalsController < ApplicationController
     private
 
     def goal_params
-        params.require(:goal).permit(:name, :user_id, :bucket_list_id)
+        params.require(:goal).permit(:name, :user_id, :bucket_list_id, :accomplished)
     end
 end

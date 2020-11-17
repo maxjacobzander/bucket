@@ -7,7 +7,7 @@
     <%= f.text_field :name %><br><br>
 
     <%= f.label :accomplished, "Have You Accomplished This Goal?" %><br>
-    <%= f.check_box :accomplished, {checked: true, unchecked:false} %><br><br>
+    <%= f.check_box :accomplished, {unchecked:false, checked:true} %><br><br>
 
     <%= f.submit "Update Goal" %>
 <% end %>
