@@ -1,9 +1,15 @@
 <h2><b><%= @bucketlist.name %></b></h2>
 <br>
 <% if @bucketlist.goals != [] %>
-    <h2><% @bucketlist.goals.each do |goal| %>
+    <h2><% @bucketlist.goals.incomplete.each do |goal| %>
         <%= link_to goal.name, bucket_list_goal_path(@bucketlist, goal) %><br><br>
         <% end %></h2>
+        <% if @bucketlist.goals.accomplished.count >= 1 %><br>
+            <h2><b>These Are The Goals You've Accomplished:</b><br><br>
+            <% @bucketlist.goals.accomplished.each do |accomplishment| %>
+            <%= link_to accomplishment.name, bucket_list_goal_path(@bucketlist, accomplishment) %><br><br>
+            <% end %></h2>
+        <% end %>
 <% end %>
 <br><br><br>
 <h3><%= link_to "Add A New Goal", new_bucket_list_goal_path(@bucketlist) %></h3>
