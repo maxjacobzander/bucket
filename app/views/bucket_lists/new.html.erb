@@ -1,11 +1,11 @@
 <h2>Create a New Bucket</h2>
 <br>
 <%= form_with model: @bucketlist, local: true do |f| %>
-    <%= f.label :name %>
+    <%= f.label :name %><br>
     <%= f.text_field :name %><br><br>
 
     <%= f.fields_for :goals do |g| %>
-    <%= g.label :name, "Goal" %>
+    <%= g.label :name, "Add Your First Goal!" %><br>
     <%= g.text_field :name %>
     <% end %>
 
