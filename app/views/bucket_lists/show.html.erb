@@ -14,6 +14,6 @@
 <br><br><br>
 <h3><%= link_to "Add A New Goal", new_bucket_list_goal_path(@bucketlist) %></h3>
 <br>
-<h3><%= link_to "Edit Bucket", edit_bucket_list_path %> <%= link_to "Delete Bucket", bucket_list_path(@bucketlist), :method => :delete %></h3>
+<h3><%= link_to "Edit Bucket", edit_bucket_list_path %> <%= link_to "Delete Bucket", bucket_list_path(@bucketlist), :method => :delete, :data => {:confirm => 'Are you sure?'} %></h3>
 <br>
 <h3><%= link_to "Back to Your Buckets", bucket_lists_path %></h3>
