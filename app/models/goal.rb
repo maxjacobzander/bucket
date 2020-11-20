@@ -6,4 +6,6 @@ class Goal < ApplicationRecord
 
   scope :incomplete, -> { where(accomplished: false) }
   scope :accomplished, -> { where(accomplished: true) }
+
+  
 end

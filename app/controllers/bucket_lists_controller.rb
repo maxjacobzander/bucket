@@ -6,6 +6,7 @@ class BucketListsController < ApplicationController
         else
             redirect_to new_user_session_path
         end
+        @randomgoal = current_user.goals.incomplete.uniq.sample
     end
 
     def new

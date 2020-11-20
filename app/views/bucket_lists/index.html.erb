@@ -5,3 +5,7 @@
 <% end %>
 <br><br><br>
 <h4><%= link_to "Add A Bucket", new_bucket_list_path %></h4>
+<br><br><br>
+<h3><b>Want Inspiration?</b></h3>
+<br><br>
+<h4>Try Accomplishing: <%= @randomgoal.name %> from <%= link_to "This Bucket", bucket_list_path(@randomgoal.bucket_list_id) %></h4>
